@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title><MemeMachine></title>
+	<script type='text/javascript' src='script.js'></script>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link href="ionicons/css/ionicons.min.css" type='text/css' rel="stylesheet">
+	<style>
+		* {
+			font-family: "Oswald";
+			padding: 0px;
+			margin: 0px;
+		}
+		body {
+			text-align: center;
+		}
+		input[type=text] {
+			color: white;
+			font-family: "Impact";
+			-webkit-text-stroke-width: 1.75px;
+			-webkit-text-stroke-color: black;
+			font-size: 250%;
+			text-transform: uppercase;
+			padding-bottom: 1.5vh;
+			padding-top: 1.5vh;
+			border: none;
+			border-bottom: 1px solid black;
+			border-top: 1px solid black;
+			text-align: center;
+			outline: none;
+			width: 100%;
+			left: 1px;
+			background-color: transparent;
+			caret-color: black;
+		}
+		input[type=file]{
+			color: black;
+			font-weight: 100;
+		}
+		.main-meme-img {
+			width: 100%;
+			height: 100%;
+		}
+		#theForm {
+			width: 100vw;
+			height: 100%;
+			position: relative;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			text-align: center;
+			display: none;
+		}
+		#bottom-meme-text {
+			bottom: 6vh;
+			position: absolute;
+		}
+		#top-meme-text {
+			top: 6vh;
+			position: absolute;
+		}
+		#editForm {
+			width: 100%;
+			height: 10vh;
+			margin-top: 1.25vh;
+			margin-bottom: 1.25vh;
+			display: none;
+			font-weight: 100;
+		}
+		#editForm button {
+			height: 10vh;
+			padding: 1.5vh 2.5vw;
+			font-size: 150%;
+			color: white;
+			background-color: #e67e22;
+			transition-duration: 0.2s;
+			border: none;
+			outline: none;
+			margin-left: 0.5vw;
+			margin-right: 0.5vw;
+		}
+		#editForm button:hover {
+			color: white;
+			background-color: #d35400;
+			cursor: pointer;
+		}
+		#editForm button:active {
+			border-radius: 20px;
+		}
+		#fileInput {
+			display: none;
+			visibility: hidden;
+		}
+		#fileChooser {
+			height: 10vh;
+			line-height: 7vh;
+			margin-top: 5vh;
+			padding: 1.5vh 2.5vw;
+			font-size: 150%;
+			color: white;
+			background-color: #e67e22;
+			transition-duration: 0.2s;
+			border: none;
+			outline: none;
+			margin-left: 0.5vw;
+			margin-right: 0.5vw;
+		}
+		#fileChooser:hover {
+			color: white;
+			background-color: #d35400;
+			cursor: pointer;
+		}
+		#fileChooser:active {
+			border-radius: 20px;
+		}
+		img{
+			image-resolution: 1000dpi;
+		}
+	</style>
+</head>
+<style id='theFontStyleTag'>
+input[type=text]{
+	font-size: 275%;
+}
+</style>
+<style id='theBorderStyleTag'>
+input[type=text]{
+	-webkit-text-stroke-width: 2.75px;
+}
+</style>
+<body>
+	<div style='display: block; height: 2.5vh; position: relative;' id='divspacer'></div>
+	<input type="file" id="fileInput" name='theFile'>
+	<label for='fileInput' id='fileChooser'><i class='ion-ios-download-outline' style='color: white; font-size: 150%;'></i> Choose A File Here</label>
+	<form id='theForm'>
+	<input type="text" id='top-meme-text'>
+	<input type="text" id='bottom-meme-text'>
+	</form>
+	<form id='editForm'>
+	<button type='button' onclick='fontSize(5);'> + Font Size</button>
+	<button type='button' onclick='fontSize(-5);'> - Font Size</button>
+	<button type='button' onclick='borderSize(0.25);'> + Outline Size</button>
+	<button type='button' onclick='borderSize(-0.25);'> - Outline Size</button>
+	<button onclick="borderToggle()" type='button'>Remove/Add Borders</button>
+	<button type='button' onclick='resetData();'>Reset Changes</button>
+	</form>
+	
+</body>
+
+</html>
